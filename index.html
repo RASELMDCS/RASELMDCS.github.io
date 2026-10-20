@@ -1,470 +1,1030 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>MyResume</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD RASEL | AI/ML & Robotics Systems Engineer</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              emerald: '#10b981',
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar & badge glows */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    .glow-cyan { box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35); }
+    .glow-emerald { box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35); }
+    .code-bg { background-color: rgba(15, 23, 42, 0.75); }
+  </style>
 </head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-cyan-500 selection:text-white antialiased">
 
-<body>
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-800 border border-cyan-500/40 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3">
+    <i class="fa-solid fa-circle-check text-cyan-400 text-lg"></i>
+    <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+  </div>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          MR
+        </div>
+        <div>
+          <span class="font-bold text-base tracking-tight text-white block">MD RASEL</span>
+          <span class="text-xs text-cyan-400 block -mt-1 font-mono">AI & Robotics Systems</span>
+        </div>
+      </a>
 
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors nav-link" data-en="About" data-ja="自己紹介">About</a>
+        <a href="#expertise" class="hover:text-cyan-400 transition-colors nav-link" data-en="Expertise" data-ja="専門領域">Expertise</a>
+        <a href="#projects" class="hover:text-cyan-400 transition-colors nav-link" data-en="Projects" data-ja="プロジェクト">Projects</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors nav-link" data-en="Skills" data-ja="技術スタック">Skills</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors nav-link" data-en="Experience" data-ja="職務経歴">Experience</a>
+        <a href="#credentials" class="hover:text-cyan-400 transition-colors nav-link" data-en="Credentials" data-ja="資格・学歴">Credentials</a>
+      </nav>
 
-  </header><!-- End Header -->
+      <!-- Action Buttons & Language Switcher -->
+      <div class="flex items-center space-x-3">
+        <button id="lang-btn" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-xs font-semibold text-slate-200 transition-all flex items-center space-x-1.5">
+          <i class="fa-solid fa-globe text-cyan-400"></i>
+          <span id="lang-text">日本語</span>
+        </button>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>RASEL MD</h1>
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, challenger"></span></p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="https://www.linkedin.com/in/rasel-m-3a5304197" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold shadow-md shadow-cyan-500/20 hover:from-cyan-400 hover:to-blue-500 transition-all">
+          <span data-en="Get in Touch" data-ja="お問い合わせ">Get in Touch</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
       </div>
     </div>
-  </section><!-- End Hero -->
 
-  <main id="main">
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-5 space-y-3">
+      <a href="#about" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="About" data-ja="自己紹介">About</a>
+      <a href="#expertise" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="Expertise" data-ja="専門領域">Expertise</a>
+      <a href="#projects" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="Projects" data-ja="プロジェクト">Projects</a>
+      <a href="#skills" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="Skills" data-ja="技術スタック">Skills</a>
+      <a href="#experience" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="Experience" data-ja="職務経歴">Experience</a>
+      <a href="#credentials" class="block py-2 text-slate-200 hover:text-cyan-400 font-medium mobile-nav-link" data-en="Credentials" data-ja="資格・学歴">Credentials</a>
+      <a href="#contact" class="block py-2 text-cyan-400 font-semibold mobile-nav-link" data-en="Contact" data-ja="お問い合わせ">Contact</a>
+    </div>
+  </header>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+  <!-- Hero Section -->
+  <section id="about" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden border-b border-slate-800/80"><div id="hero"></div>
+    <!-- Ambient Background Lighting -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[300px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="section-title">
-          <h2>About</h2>
-          <p>I'm a skilled engineer with a background in electronics engineering and IT, specializing in embedded systems and AI development. Originally from Bangladesh and now based in Osaka, Japan, I excel in swiftly tackling new challenges and driving project success.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Embedded System Designer &amp; Web Developer.</h3>
-            <p class="fst-italic">
-              Full-stack Web Development. AI System Development.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 Jan 1994</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span>www.github.com/RASELMDCS</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>070 1363 5256</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Osaka, Japan</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Couple Of Diplomas</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>raselmdcs@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Employment:</strong> <span>CS Communication Co.,Ltd.</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              I am a dedicated and versatile professional with a passion for learning and growth. With a wide range of skills acquired across different fields, I thrive on challenges and am constantly exploring new areas to expand my expertise.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>I have acquired a diverse skill set spanning multiple disciplines, demonstrating adaptability and a proactive approach to learning. This versatility has empowered me to excel in varied roles and make meaningful contributions to projects across different domains.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">HTML/CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">C <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Intro & Highlights -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 text-xs font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span data-en="Available for Engineer Opportunities in Japan" data-ja="日本国内でのエンジニア転職活動中（即戦力）">Available for Engineer Opportunities in Japan</span>
           </div>
 
-          <div class="col-lg-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <span data-en="Bridging Physical Systems with" data-ja="フィジカル世界とAIを繋ぐ">Bridging Physical Systems with</span><br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400" data-en="Intelligent AI & Robotics" data-ja="産業AI・ロボティクス実装">Intelligent AI & Robotics</span>
+          </h1>
 
-            <div class="progress">
-              <span class="skill">SQL/PostgreSQL <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl" data-en="AI/ML Engineer with 4+ years of hands-on experience in Japan deploying computer vision (YOLO, VGG16), time-series anomaly detection (LSTM), collaborative robotics (Universal Robots & URCaps), and cloud MLOps on AWS SageMaker." data-ja="日本国内でのエンジニア実務4年以上。水処理プラントのAI異常検知（VGG16/LSTM/SageMaker）、協働ロボット（URCaps/Java）パレタイジング自動化、NVIDIA Jetsonによるエッジ物体認識AIレジなど、現場で確実に動くシステムを一貫して実装。">
+            AI/ML Engineer with 4+ years of hands-on experience in Japan deploying computer vision (YOLO, VGG16), time-series anomaly detection (LSTM), collaborative robotics (Universal Robots & URCaps), and cloud MLOps on AWS SageMaker.
+          </p>
 
-            <div class="progress">
-              <span class="skill">Flask,Django,Bootstrap <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Git,AWS,Docker,Jenkins,Kubernetes <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Windows/Linux <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-2.5 pt-2">
+            <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300">
+              <i class="fa-solid fa-location-dot text-cyan-400"></i>
+              <span data-en="Tokyo, Japan" data-ja="東京都（就労制限なし）">Tokyo, Japan</span>
+            </span>
+            <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300">
+              <i class="fa-solid fa-language text-cyan-400"></i>
+              <span data-en="JLPT N2 (Business Japanese)" data-ja="日本語能力試験 N2 合格（ビジネス対応）">JLPT N2 (Business Japanese)</span>
+            </span>
+            <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-slate-300">
+              <i class="fa-solid fa-comments text-cyan-400"></i>
+              <span data-en="TOEIC 720 (Professional English)" data-ja="英語 ビジネスレベル（TOEIC 720）">TOEIC 720 (Professional English)</span>
+            </span>
           </div>
 
-        </div>
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all">
+              <i class="fa-solid fa-layer-group mr-2"></i>
+              <span data-en="Explore Projects" data-ja="プロジェクト一覧を見る">Explore Projects</span>
+            </a>
+            
+            <button id="open-docs-btn" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold text-sm hover:bg-slate-800 transition-all">
+              <i class="fa-solid fa-file-pdf text-red-400 mr-2"></i>
+              <span data-en="View 職務経歴書 & Resume" data-ja="職務経歴書・履歴書を確認">View 職務経歴書 & Resume</span>
+            </button>
 
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>RASEL MD</h4>
-              <p><em>An Engineer with expertise in AI System Development, Infrastructure Automation, and Web Development. Proven track record in enhancing project efficiency and implementing innovative solutions.</em></p>
-              <ul>
-                <li>Osaka,Japan</li>
-                <li>070-1363-5256</li>
-                <li>raselmdcs@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>IT Technical Department</h4>
-              <h5>2020 - 2022</h5>
-              <p><em>osaka information and computer science college, Osaka, Japan</em></p>
-              <p>Coursework consisted of comprehensive studies in computer science and programming, including C#, HTML, CSS, JavaScript, SQL, and DBA.</p>
-            </div>
-            <div class="resume-item">
-              <h4>Japanese Language</h4>
-              <h5>2018 - 2020</h5>
-              <p><em>Human Academy Japanese Language School, Osaka, Japan</em></p>
-              <p>Coursework consisted of learning Japanese language from basic to advanced levels, as well as Japanese culture and manners. </p>
-            </div>
-            <div class="resume-item">
-              <h4>Diploma in Electronics Engineering</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>CCN Polytechnic Institute, Kotbari, Cumilla, Bangladesh</em></p>
-              <p>Coursework consisted of comprehensive studies in Electronics Engineering and Circuit Design, including Microwave Radar & Navigation Aids, Bio-Medical Engineering, and Digital Electronics.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>System Engineer</h4>
-              <h5>2022 - Present</h5>
-              <p><em>CS Communication Co., Ltd., Osaka, Japan</em></p>
-              <ul>
-                <li>Led the design, development, and implementation of an AI Cash Register System.</li>
-                <li>Designed and developed a Human Counting App, AI Voice Assistant, Organization Management System, and CI/CD pipeline.</li>
-                <li>Set up all required environments on the NVIDIA Kit.</li>
-                <li>Maintained effective communication with senior management.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Japanese Language Instructor</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Hana Japanese Language School, Dhaka, Bangladesh</em></p>
-              <ul>
-                <li>Taught basic Japanese language skills, including speaking, listening, reading, and writing.</li>
-                <li>Developed and implemented lesson plans and instructional materials.</li>
-                <li>Assessed students' progress and provided feedback to help them improve.</li>
-                <li>Assisted students in understanding Japanese culture and manners to enhance their language learning experience.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Below are some of the projects I've had the pleasure to work on. Each one showcases my skills and dedication to excellence. </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">AI App</li>
-              <li data-filter=".filter-card">DevOps</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
+            <a href="https://github.com/raselmdcs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-300 hover:text-white transition-all" title="GitHub Profile">
+              <i class="fa-brands fa-github text-lg"></i>
+            </a>
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <!-- Right: Profile Card & Quick Stats -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/90 border border-slate-700/80 p-6 shadow-2xl backdrop-blur-xl">
+            <!-- Decorative Accent -->
+            <div class="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-[11px] font-bold text-white shadow-lg">
+              IoT &times; AI &times; Robotics
+            </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Ai_cash.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>AI Cash Register</h4>
-                <p>Cash Register beta version</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Ai_cash.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="AI Cash Register"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/6aiWF6p2QrM" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+            <div class="flex items-center space-x-4 mb-6">
+              <img src="data:image/jpeg;base64,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" alt="MD RASEL" class="w-20 h-20 rounded-xl object-cover border-2 border-cyan-500/50 shadow-md">
+              <div>
+                <h3 class="text-xl font-bold text-white">MD RASEL</h3>
+                <p class="text-xs text-slate-400">ラセル イムデイ</p>
+                <p class="text-xs text-cyan-400 font-mono mt-0.5">Suiing Co., Ltd. (水ing)</p>
+                <div class="mt-2 flex items-center space-x-2 text-xs text-slate-400">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span data-en="Electronics Eng. Graduate" data-ja="電子工学専攻出身">Electronics Eng. Graduate</span>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/AI_voice.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>AI Voice Assistant</h4>
-                <p>AI Voioce Assistant using GPT3.5 API-</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/AI_voice.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="AI Voice Assistant"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/D8L1XPTY5xw" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-2 gap-3 mb-5">
+              <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                <span class="text-2xl font-black text-cyan-400">4+</span>
+                <span class="text-[11px] text-slate-400 block" data-en="Years Japan Experience" data-ja="日本での実務経験年数">Years Japan Exp.</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                <span class="text-2xl font-black text-emerald-400">3</span>
+                <span class="text-[11px] text-slate-400 block" data-en="Industrial Production AI" data-ja="商用現場AI稼働実績">Production AI Deployments</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                <span class="text-2xl font-black text-blue-400">N2</span>
+                <span class="text-[11px] text-slate-400 block" data-en="JLPT Certified" data-ja="日本語能力試験 N2合格">JLPT Certified</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                <span class="text-2xl font-black text-indigo-400">720</span>
+                <span class="text-[11px] text-slate-400 block" data-en="TOEIC L&R Score" data-ja="TOEIC スコア">TOEIC L&R Score</span>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/People_counting.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>AI People Counting</h4>
-                <p>People Counting using YOLO algorithm</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/People_counting.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="AI People Counting"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/h_MGNH7LUtI" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
+            <!-- Terminal Snippet -->
+            <div class="rounded-xl bg-slate-950 p-3 border border-slate-800/90 font-mono text-xs text-slate-400">
+              <div class="flex items-center space-x-1.5 mb-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-[10px] text-slate-500 ml-2">stack_summary.py</span>
               </div>
+              <p class="text-emerald-400"><span class="text-cyan-400">stack</span> = ["PyTorch", "YOLO", "Jetson", "URCaps", "SageMaker", "K8s"]</p>
+              <p class="text-slate-500 mt-1"># Deployed across municipal & industrial facilities</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/DevOps1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Infrastructure Automation</h4>
-                <p>DevOps/Infrastructure Automation</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/DevOps1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="DevOps"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/27vBnl1iSgY" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>                 
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Organization.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Organization Management System</h4>
-                <p>Organization Management System using Django Framework</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Organization.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Organization Management System"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/Zc972hsRBlY" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/bootstrap.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Simple Frontend Design</h4>
-                <p>Frontend design by Bootstrap Framework</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/bootstrap.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Frontend Design"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/E-88HavhNjM" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/parking.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Parking Solution by AI</h4>
-                <p>AI Parking Solution with yolov5</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/parking.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="AI Parking Solution"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/qu9ry7OmvTI" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/expo.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Tokyo AI Expo</h4>
-                <p>AI Project Demo</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/expo.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="AI Expo Demo"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/udpLbw9HRgs" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/dhaka_halal.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>EC Site</h4>
-                <p>Halal Grocery Store website</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/expo.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EC Site"><i class="bx bx-plus"></i></a>
-                  <a href="https://www.youtube.com/embed/4YG45KKGvdo" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-      </div>
-    </section><!-- End Portfolio Section -->
-
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>RASEL MD</h3>
-      <p>An Engineer with expertise in AI System Development, Infrastructure Automation, and Web Development.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="https://www.linkedin.com/in/rasel-m-3a5304197" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>RASELMD</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Core Expertise Pillars -->
+  <section id="expertise" class="py-20 border-b border-slate-800/80 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono" data-en="Core Pillars" data-ja="コアスキル領域">Core Pillars</h2>
+        <h3 class="text-3xl font-extrabold text-white mt-2" data-en="End-to-End Industrial Intelligence" data-ja="実現場を支える4つの技術領域">End-to-End Industrial Intelligence</h3>
+        <p class="text-slate-400 text-sm mt-3" data-en="From edge camera inference and robot arm control to automated cloud retraining pipelines." data-ja="現場のエッジカメラ・センサからロボット制御、クラウドMLOpsの再学習まで一貫対応。">
+          From edge camera inference and robot arm control to automated cloud retraining pipelines.
+        </p>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Pillar 1 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all hover:-translate-y-1 group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2" data-en="Industrial AI & Anomaly Detection" data-ja="産業AI・時系列異常検知">Industrial AI & Anomaly Detection</h4>
+          <p class="text-slate-400 text-xs leading-relaxed" data-en="Real-time monitoring and predictive maintenance for municipal wastewater and water treatment plants using LSTM sensor forecasting and VGG16 visual recognition." data-ja="下水・浄水場等の水インフラ施設におけるセンサデータのLSTM時系列解析、VGG16による屋外カメラ画像認識を用いた異常予兆検知モデルの設計・開発。">
+            Real-time monitoring and predictive maintenance for municipal wastewater plants using LSTM sensor forecasting and VGG16 visual recognition.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded">LSTM</span>
+            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded">VGG16</span>
+            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded">PyTorch</span>
+          </div>
+        </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+        <!-- Pillar 2 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all hover:-translate-y-1 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2" data-en="Robotics & URCaps Control" data-ja="協働ロボティクス・制御UI">Robotics & URCaps Control</h4>
+          <p class="text-slate-400 text-xs leading-relaxed" data-en="Automated palletizing systems for Universal Robots (UR10/UR20). Built Java Swing URCaps plugins for teach pendant pattern configuration and sensor integration." data-ja="Universal Robots（協働ロボット）のパレタイジングシステム開発。Java SwingによるURCapsプラグイン開発で教示ペンダント画面上での積載パターン直感設定を実現。">
+            Automated palletizing systems for Universal Robots (UR10/UR20). Built Java Swing URCaps plugins for teach pendant pattern configuration.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">URCaps</span>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">Java Swing</span>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">Universal Robots</span>
+          </div>
+        </div>
 
+        <!-- Pillar 3 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2" data-en="Edge AI & Computer Vision" data-ja="エッジAI・組込み画像処理">Edge AI & Computer Vision</h4>
+          <p class="text-slate-400 text-xs leading-relaxed" data-en="High-speed multi-product object detection for automated cash registers using YOLO & OpenCV. Optimized for low-latency inference on NVIDIA Jetson Orin embedded chips." data-ja="バーコード不要の画像認識AIレジシステムにおけるYOLO物体検出モデル開発。NVIDIA Jetson Orinハードウェア上での低遅延エッジ推論最適化。">
+            High-speed multi-product object detection for automated cash registers using YOLO & OpenCV, deployed on NVIDIA Jetson Orin.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded">YOLO</span>
+            <span class="text-[10px] font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded">Jetson Orin</span>
+            <span class="text-[10px] font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded">OpenCV</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 transition-all hover:-translate-y-1 group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2" data-en="Cloud MLOps & High-Availability" data-ja="クラウドMLOps・基盤自動化">Cloud MLOps & Infrastructure</h4>
+          <p class="text-slate-400 text-xs leading-relaxed" data-en="Automated training & inference pipelines on AWS SageMaker and IoT Greengrass. Container orchestration with Docker, Kubernetes, and Jenkins CI/CD." data-ja="AWS SageMaker/GreengrassによるMLモデルの学習・推論自動化。Docker/Kubernetesによるマイクロサービス化、JenkinsによるCI/CD自動化構築。">
+            Automated training & inference pipelines on AWS SageMaker, container orchestration with Docker/K8s, and Jenkins CI/CD automation.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded">SageMaker</span>
+            <span class="text-[10px] font-mono text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded">Docker & K8s</span>
+            <span class="text-[10px] font-mono text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded">Jenkins</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono" data-en="Featured Work" data-ja="主要プロジェクト">Featured Work</h2>
+          <h3 class="text-3xl font-extrabold text-white mt-1" data-en="Production Engineering Systems" data-ja="実稼働エンジニアリングプロジェクト">Production Engineering Systems</h3>
+        </div>
+        <p class="text-slate-400 text-xs md:text-sm mt-2 md:mt-0 max-w-md" data-en="Proven systems operating in public utility plants, manufacturing, and retail." data-ja="公共インフラ、製造物流、流通店舗で実際に稼働・導入された実績。">
+          Proven systems operating in public utility plants, manufacturing, and retail.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: Suiing -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-7 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3 font-mono">
+              <span class="text-cyan-400 font-semibold">水ing 株式会社 (Suiing Co., Ltd.)</span>
+              <span>2025.03 - Present</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2" data-en="Wastewater Plant AI Anomaly Detection & Real-Time Monitoring" data-ja="水処理プラント AI異常検知・リアルタイム監視システム">
+              Wastewater Plant AI Anomaly Detection & Real-Time Monitoring
+            </h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-5" data-en="Architected sensor time-series forecasting (LSTM) to predict equipment failures before shutdown and camera-based image recognition (VGG16) handling outdoor lighting variations. Built automated MLOps pipelines on AWS SageMaker and IoT Greengrass." data-ja="浄水場・下水処理場設備の突発停止を防ぐセンサ時系列予兆検知（LSTM）と、屋外の逆光や夜間環境に適応したカメラ画像認識（VGG16）を設計。AWS SageMaker/GreengrassによるMLOps自動化を主導。">
+              Architected sensor time-series forecasting (LSTM) to predict equipment failures and camera-based image recognition (VGG16). Built automated MLOps pipelines on AWS SageMaker.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Python</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">PyTorch</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">LSTM</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">VGG16</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">AWS SageMaker</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">IoT Greengrass</span>
+            </div>
+          </div>
+          <button class="project-modal-btn w-full py-2.5 rounded-xl border border-cyan-500/30 text-cyan-400 text-xs font-semibold hover:bg-cyan-500/10 transition-colors flex items-center justify-center space-x-2" data-project="suiing">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-en="View Architecture & Pipeline Specs" data-ja="アーキテクチャ・詳細仕様を見る">View Architecture & Pipeline Specs</span>
+          </button>
+        </div>
+
+        <!-- Project 2: iCom Giken -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-7 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3 font-mono">
+              <span class="text-emerald-400 font-semibold">icom技研 株式会社 (iCom Giken)</span>
+              <span>2024.08 - 2025.02</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2" data-en="Universal Robots Palletizing Automation & URCaps Custom UI" data-ja="協働ロボット（UR）パレタイジング自動化＆URCaps開発">
+              Universal Robots Palletizing Automation & URCaps Custom UI
+            </h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-5" data-en="Engineered automated box-stacking and palletizing for Universal Robots (UR10/UR20). Built a custom URCaps application in Java Swing, enabling non-technical plant operators to configure multi-box patterns directly on the teach pendant." data-ja="協働ロボット（UR10/UR20）を用いた段ボールパレット積載自動化システム。Java SwingによるURCapsプラグインを開発し、専門知識不要で教示ペンダントから複数箱サイズ・スタックパターンを設定可能に。">
+              Engineered automated box-stacking and palletizing for Universal Robots (UR10/UR20). Built a custom URCaps application in Java Swing for teach pendant pattern configuration.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Java Swing</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">URCaps</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Universal Robots</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">URScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Polyscope</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Safety Sensors</span>
+            </div>
+          </div>
+          <button class="project-modal-btn w-full py-2.5 rounded-xl border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/10 transition-colors flex items-center justify-center space-x-2" data-project="icom">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-en="View Robotics Implementation Specs" data-ja="ロボティクス実装仕様を見る">View Robotics Implementation Specs</span>
+          </button>
+        </div>
+
+        <!-- Project 3: CS Communication -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-7 hover:border-blue-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3 font-mono">
+              <span class="text-blue-400 font-semibold">株式会社シーエスコミュニケーション</span>
+              <span>2022.04 - 2024.06</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2" data-en="Barcode-Less Edge AI Cash Register (NVIDIA Jetson & YOLO)" data-ja="バーコード不要 物体認識AIレジシステム（Jetson & YOLO）">
+              Barcode-Less Edge AI Cash Register (NVIDIA Jetson & YOLO)
+            </h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-5" data-en="Engineered a real-time retail checkout system detecting items simultaneously using YOLO object detection and OpenCV. Optimized deep learning inference on NVIDIA Jetson Orin embedded chips for sub-100ms response times." data-ja="商品の一括画像認識を行うAIレジシステム。YOLOとOpenCVによる物体検出モデルを構築し、NVIDIA Jetson Orinハードウェア上での低遅延エッジ推論を実現。店舗業務の大幅な時短に貢献。">
+              Engineered a real-time retail checkout system detecting items simultaneously using YOLO and OpenCV, optimized on NVIDIA Jetson Orin for sub-100ms response times.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">YOLO</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">NVIDIA Jetson Orin</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">OpenCV</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Python Django</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">PostgreSQL</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Edge Computing</span>
+            </div>
+          </div>
+          <button class="project-modal-btn w-full py-2.5 rounded-xl border border-blue-500/30 text-blue-400 text-xs font-semibold hover:bg-blue-500/10 transition-colors flex items-center justify-center space-x-2" data-project="cs">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-en="View Edge Architecture Specs" data-ja="エッジ推論仕様を見る">View Edge Architecture Specs</span>
+          </button>
+        </div>
+
+        <!-- Project 4: DevOps & CI/CD -->
+        <div class="rounded-2xl bg-slate-900 border border-slate-800 p-7 hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-3 font-mono">
+              <span class="text-indigo-400 font-semibold">Infrastructure & Pipeline Engineering</span>
+              <span>2022 - 2026</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2" data-en="Enterprise Cloud MLOps & CI/CD Automation Infrastructure" data-ja="エンタープライズ MLOps & CI/CD自動化基盤">
+              Enterprise Cloud MLOps & CI/CD Automation Infrastructure
+            </h4>
+            <p class="text-slate-300 text-sm leading-relaxed mb-5" data-en="Built containerized environments and microservice deployments using Docker, Kubernetes, and automated Jenkins pipelines. Designed database schemas and optimized SQL queries on PostgreSQL and Oracle databases." data-ja="Docker/Kubernetesを用いたコンテナ化およびJenkinsによるCI/CD自動化パイプライン構築。PostgreSQL/Oracleのデータベース設計とクエリチューニング、Linux環境構築を一貫して推進。">
+              Built containerized environments and microservice deployments using Docker, Kubernetes, and automated Jenkins pipelines with SQL database optimization.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Docker</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Kubernetes</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Jenkins</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">AWS EC2/S3</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Git/GitHub</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-mono">Linux (Ubuntu)</span>
+            </div>
+          </div>
+          <button class="project-modal-btn w-full py-2.5 rounded-xl border border-indigo-500/30 text-indigo-400 text-xs font-semibold hover:bg-indigo-500/10 transition-colors flex items-center justify-center space-x-2" data-project="devops">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-en="View Pipeline & Infra Specs" data-ja="インフラ自動化仕様を見る">View Pipeline & Infra Specs</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section id="skills" class="py-20 border-b border-slate-800/80 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono" data-en="Technical Arsenal" data-ja="テクニカルスキル一覧">Technical Arsenal</h2>
+        <h3 class="text-3xl font-extrabold text-white mt-1" data-en="Skills & Production Toolchain" data-ja="実務で使用している言語・技術スタック">Skills & Production Toolchain</h3>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" id="skill-filter-tabs">
+        <button class="skill-tab active px-4 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500 text-white transition-all" data-category="all" data-en="All Skills" data-ja="全スキル">All Skills</button>
+        <button class="skill-tab px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="aiml" data-en="AI & Vision" data-ja="AI・画像処理">AI & Vision</button>
+        <button class="skill-tab px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="robotics" data-en="Robotics & Edge" data-ja="ロボティクス・エッジ">Robotics & Edge</button>
+        <button class="skill-tab px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="cloud" data-en="Cloud & MLOps" data-ja="クラウド・MLOps">Cloud & MLOps</button>
+        <button class="skill-tab px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-category="languages" data-en="Languages & DB" data-ja="言語・データベース">Languages & DB</button>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" id="skills-container">
+        <!-- AI / ML -->
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="aiml">
+          <i class="fa-solid fa-brain text-cyan-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">PyTorch</span>
+          <span class="text-[10px] text-slate-400">Deep Learning</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="aiml">
+          <i class="fa-solid fa-eye text-cyan-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">YOLO</span>
+          <span class="text-[10px] text-slate-400">Object Detection</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="aiml">
+          <i class="fa-solid fa-camera text-cyan-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">OpenCV</span>
+          <span class="text-[10px] text-slate-400">Computer Vision</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="aiml">
+          <i class="fa-solid fa-chart-area text-cyan-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">LSTM</span>
+          <span class="text-[10px] text-slate-400">Time-Series Anomaly</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="aiml">
+          <i class="fa-solid fa-images text-cyan-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">VGG16</span>
+          <span class="text-[10px] text-slate-400">Image Classification</span>
+        </div>
+
+        <!-- Robotics & Edge -->
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="robotics">
+          <i class="fa-solid fa-robot text-emerald-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Universal Robots</span>
+          <span class="text-[10px] text-slate-400">UR10/UR20 Cobots</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="robotics">
+          <i class="fa-solid fa-puzzle-piece text-emerald-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">URCaps</span>
+          <span class="text-[10px] text-slate-400">Java Swing Plugin</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="robotics">
+          <i class="fa-solid fa-microchip text-emerald-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">NVIDIA Jetson</span>
+          <span class="text-[10px] text-slate-400">Orin / Xavier Edge</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="robotics">
+          <i class="fa-solid fa-tower-broadcast text-emerald-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">IoT Sensors</span>
+          <span class="text-[10px] text-slate-400">Data Acquisition</span>
+        </div>
+
+        <!-- Cloud & MLOps -->
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="cloud">
+          <i class="fa-brands fa-aws text-indigo-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">AWS SageMaker</span>
+          <span class="text-[10px] text-slate-400">ML Pipelines</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="cloud">
+          <i class="fa-brands fa-docker text-indigo-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Docker</span>
+          <span class="text-[10px] text-slate-400">Containers</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="cloud">
+          <i class="fa-solid fa-dharmachakra text-indigo-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Kubernetes</span>
+          <span class="text-[10px] text-slate-400">Orchestration</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="cloud">
+          <i class="fa-brands fa-jenkins text-indigo-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Jenkins</span>
+          <span class="text-[10px] text-slate-400">CI/CD Pipelines</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="cloud">
+          <i class="fa-brands fa-linux text-indigo-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Linux (Ubuntu)</span>
+          <span class="text-[10px] text-slate-400">Production Servers</span>
+        </div>
+
+        <!-- Languages & DB -->
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="languages">
+          <i class="fa-brands fa-python text-blue-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Python</span>
+          <span class="text-[10px] text-slate-400">4+ Years</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="languages">
+          <i class="fa-brands fa-java text-blue-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Java</span>
+          <span class="text-[10px] text-slate-400">OOP & URCaps</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="languages">
+          <i class="fa-solid fa-database text-blue-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">PostgreSQL</span>
+          <span class="text-[10px] text-slate-400">Schema & Tuning</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="languages">
+          <i class="fa-solid fa-code text-blue-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Django / Flask</span>
+          <span class="text-[10px] text-slate-400">Backend Web APIs</span>
+        </div>
+        <div class="skill-item p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center text-center" data-category="languages">
+          <i class="fa-brands fa-git-alt text-blue-400 text-2xl mb-2"></i>
+          <span class="text-sm font-bold text-white">Git / GitHub</span>
+          <span class="text-[10px] text-slate-400">Version Control</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Experience Timeline -->
+  <section id="experience" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono" data-en="Career Path" data-ja="職務経歴">Career Path</h2>
+        <h3 class="text-3xl font-extrabold text-white mt-1" data-en="Professional Experience in Japan" data-ja="日本国内での実務経歴">Professional Experience in Japan</h3>
+      </div>
+
+      <div class="space-y-8 relative before:absolute before:inset-0 before:left-8 md:before:left-1/2 before:w-0.5 before:bg-slate-800">
+        
+        <!-- Job 1 -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500 text-slate-950 font-bold text-xs absolute left-4 md:left-1/2 -translate-x-1/2 z-10 shadow-lg shadow-cyan-500/50">
+            1
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12 text-left md:text-right">
+            <span class="text-xs font-mono text-cyan-400 font-semibold">2025.03 – Present (Active)</span>
+            <h4 class="text-lg font-bold text-white mt-0.5">水ing 株式会社 (Suiing Co., Ltd.)</h4>
+            <p class="text-xs text-slate-400" data-en="AI/ML Engineer · Water Infrastructure Systems" data-ja="AI/MLエンジニア · 水処理インフラ総合ソリューション">AI/ML Engineer · Water Infrastructure</p>
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pl-12 mt-2 md:mt-0">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+              <span data-en="Leading AI anomaly detection and real-time plant monitoring with LSTM sensor forecasting and VGG16 camera recognition. Standardizing AWS SageMaker/Greengrass MLOps pipelines." data-ja="下水・浄水場等の維持管理高度化に向けたIoT時系列解析（LSTM）とカメラ画像認識（VGG16）による異常予兆検知モデルの開発、およびAWS SageMaker/Greengrassパイプライン構築。">
+                Leading AI anomaly detection and real-time plant monitoring with LSTM sensor forecasting and VGG16 camera recognition. Standardizing AWS SageMaker/Greengrass MLOps pipelines.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs absolute left-4 md:left-1/2 -translate-x-1/2 z-10 shadow-lg shadow-emerald-500/50">
+            2
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12 text-left md:text-right">
+            <span class="text-xs font-mono text-emerald-400 font-semibold">2024.08 – 2025.02</span>
+            <h4 class="text-lg font-bold text-white mt-0.5">icom技研 株式会社 (iCom Giken)</h4>
+            <p class="text-xs text-slate-400" data-en="Robotics Software Engineer" data-ja="ロボティクスソフトウェアエンジニア">Robotics Software Engineer</p>
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pl-12 mt-2 md:mt-0">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+              <span data-en="Developed automated box-stacking palletizing systems for Universal Robots (UR10/UR20). Built custom Java URCaps plugins for teach pendant pattern configuration and sensor communications." data-ja="協働ロボット（UR10/UR20）のパレタイジングシステム開発。Java SwingによるURCapsプラグイン開発、教示ペンダント操作画面・スタッキングパターン実装。">
+                Developed automated box-stacking palletizing systems for Universal Robots (UR10/UR20). Built custom Java URCaps plugins for teach pendant pattern configuration.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-slate-950 font-bold text-xs absolute left-4 md:left-1/2 -translate-x-1/2 z-10 shadow-lg shadow-blue-500/50">
+            3
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pr-12 text-left md:text-right">
+            <span class="text-xs font-mono text-blue-400 font-semibold">2022.04 – 2024.06</span>
+            <h4 class="text-lg font-bold text-white mt-0.5">株式会社シーエスコミュニケーション</h4>
+            <p class="text-xs text-slate-400" data-en="System & AI Engineer" data-ja="システムエンジニア">System & AI Engineer</p>
+          </div>
+          <div class="ml-16 md:ml-0 md:w-1/2 md:pl-12 mt-2 md:mt-0">
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+              <span data-en="Developed barcode-less retail AI cash registers using YOLO on NVIDIA Jetson Orin. Built Python (Django/Flask) backend APIs, PostgreSQL database tuning, and CI/CD with Docker & Jenkins." data-ja="YOLO物体認識を用いたAIレジシステム開発およびNVIDIA Jetson Orin上でのエッジ推論実装。Django/Flaskバックエンド、Docker/K8s/Jenkins CI/CD基盤構築。">
+                Developed barcode-less retail AI cash registers using YOLO on NVIDIA Jetson Orin. Built Python (Django/Flask) backend APIs, PostgreSQL tuning, and CI/CD with Docker & Jenkins.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials & Education Section -->
+  <section id="credentials" class="py-20 border-b border-slate-800/80 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest font-mono" data-en="Verified Credentials" data-ja="公的資格・学歴">Verified Credentials</h2>
+        <h3 class="text-3xl font-extrabold text-white mt-1" data-en="Certifications & Academic Foundation" data-ja="保有資格および教育背景">Certifications & Academic Foundation</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Credential 1 -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
+              <i class="fa-solid fa-stamp text-lg"></i>
+            </div>
+            <div class="text-xs font-mono text-cyan-400">Certified August 2019 · No. N2A233670J</div>
+            <h4 class="text-lg font-bold text-white mt-1">JLPT N2 (日本語能力試験)</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-en="Certified by Japan Educational Exchanges and Services (JEES). Fluent in Japanese technical meetings, specifications writing, and team communication." data-ja="公益財団法人日本国際教育支援協会認定。日本語での技術仕様書の作成・読解、会議進行、日々の報連相を円滑に遂行可能。">
+              Certified by Japan Educational Exchanges and Services (JEES). Fluent in Japanese technical meetings and specification documentation.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 font-mono">
+            Registration: 270220625 | Score: 99/180
+          </div>
+        </div>
+
+        <!-- Credential 2 -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+              <i class="fa-solid fa-award text-lg"></i>
+            </div>
+            <div class="text-xs font-mono text-emerald-400">Certified June 2021</div>
+            <h4 class="text-lg font-bold text-white mt-1">TOEIC L&R 720</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-en="Professional working proficiency in English. Capable of technical research, reading English ML papers/docs, and collaborating with international engineering teams." data-ja="英語ビジネスレベル。最新の機械学習論文や英語公式ドキュメントの読解、海外拠点・多国籍チームとの英語による技術折衝が可能。">
+              Professional working proficiency in English. Capable of reading ML research papers and collaborating with global teams.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 font-mono">
+            Professional Business Working Proficiency
+          </div>
+        </div>
+
+        <!-- Credential 3 -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
+              <i class="fa-solid fa-graduation-cap text-lg"></i>
+            </div>
+            <div class="text-xs font-mono text-blue-400">Graduated 2014 & 2022</div>
+            <h4 class="text-lg font-bold text-white mt-1" data-en="Electronics & IT Education" data-ja="電子工学＆IT専門教育">Electronics & IT Education</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-en="Diploma in Electronics Engineering (CCN Polytechnic Institute) + IT Technical Department (Osaka Information & Computer Science College)." data-ja="バングラデシュCCN工科大学電子工学ディプロマ取得後、大阪情報コンピュータ専門学校ITテクニカル学科卒業。ハードウェア回路からソフトウェアまで網羅。">
+              Diploma in Electronics Engineering (CCN Polytechnic Institute) & IT Technical Dept. (Osaka Information & Computer Science College).
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 font-mono">
+            Hardware & Software Foundation
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <section id="contact" class="py-20 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-2xl mx-auto mb-6 shadow-xl shadow-cyan-500/20">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <h2 class="text-3xl font-extrabold text-white" data-en="Let's Build Something Impactful" data-ja="お気軽にご連絡ください">Let's Build Something Impactful</h2>
+      <p class="text-slate-400 text-sm mt-3 max-w-xl mx-auto" data-en="Open to discussions for AI/ML Engineer, Robotics AI Systems Engineer, and Industrial MLOps positions across Tokyo and Japan." data-ja="東京都内および日本国内におけるAI/MLエンジニア、ロボティクス開発、MLOpsポジションに関するご連絡をお待ちしております。">
+        Open to discussions for AI/ML Engineer, Robotics AI Systems Engineer, and Industrial MLOps positions across Tokyo and Japan.
+      </p>
+
+      <!-- Contact Action Grid -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+        <!-- Email -->
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-slate-500 font-mono block">Direct Email</span>
+            <span class="text-sm font-semibold text-white mt-1 block truncate">raselmdcs@gmail.com</span>
+          </div>
+          <button id="copy-email-btn" class="mt-4 w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold transition-colors flex items-center justify-center space-x-1.5">
+            <i class="fa-regular fa-copy"></i>
+            <span data-en="Copy Email" data-ja="メールアドレスをコピー">Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Phone -->
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-slate-500 font-mono block">Phone (Japan)</span>
+            <span class="text-sm font-semibold text-white mt-1 block">070-1363-5256</span>
+          </div>
+          <a href="tel:07013635256" class="mt-4 w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold transition-colors flex items-center justify-center space-x-1.5">
+            <i class="fa-solid fa-phone"></i>
+            <span data-en="Call Now" data-ja="電話をかける">Call Now</span>
+          </a>
+        </div>
+
+        <!-- GitHub -->
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs text-slate-500 font-mono block">Code & Repos</span>
+            <span class="text-sm font-semibold text-white mt-1 block">github.com/raselmdcs</span>
+          </div>
+          <a href="https://github.com/raselmdcs" target="_blank" rel="noopener noreferrer" class="mt-4 w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-blue-400 text-xs font-semibold transition-colors flex items-center justify-center space-x-1.5">
+            <i class="fa-brands fa-github"></i>
+            <span data-en="Visit GitHub" data-ja="GitHubを開く">Visit GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-16 pt-8 border-t border-slate-900 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between">
+        <p>&copy; 2026 MD RASEL. Tokyo, Japan.</p>
+        <p class="mt-2 sm:mt-0 font-mono text-[11px] text-slate-600">Built for raselmdcs.github.io</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Specs Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-2xl p-6 sm:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+      <button id="close-project-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="project-modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Documents Download Modal -->
+  <div id="docs-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-2xl p-6 sm:p-8 relative shadow-2xl">
+      <button id="close-docs-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white" data-en="Application Documents" data-ja="転職応募書類一覧">Application Documents</h3>
+          <p class="text-xs text-slate-400" data-en="Updated for 2026 Job Applications in Japan" data-ja="2026年最新版・日本国内応募用">Updated for 2026 Job Applications</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <a href="https://drive.google.com/file/d/1-CCTLwNKw6agzGHRaZSoP5jOOtaW7a9z/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-between group transition-all">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
+            <div>
+              <span class="text-xs font-bold text-white block">職務経歴書 (Shokumu Keirekisho)</span>
+              <span class="text-[10px] text-slate-400 block">PDF · Japanese · Updated Oct 2026</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/13AwFMTume9SIr8npjiX5ZRNCUUtP5e07/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-between group transition-all">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
+            <div>
+              <span class="text-xs font-bold text-white block">履歴書 (JIS Rirekisho)</span>
+              <span class="text-[10px] text-slate-400 block">PDF · Japanese · Updated Oct 2026</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/1Nzl6Yr71ZI4ZooUy6iWcdnqvM-VPgL8I/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-between group transition-all">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-certificate text-amber-400 text-lg"></i>
+            <div>
+              <span class="text-xs font-bold text-white block">JLPT N2 認定書・成績証明書</span>
+              <span class="text-[10px] text-slate-400 block">PDF · Official Certificate & Scores</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/1Myo0In7UeuR0xZtEhXHQeY5PzfIT3uoD/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 flex items-center justify-between group transition-all">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-file-word text-blue-400 text-lg"></i>
+            <div>
+              <span class="text-xs font-bold text-white block">English Technical Resume</span>
+              <span class="text-[10px] text-slate-400 block">DOCX · English Standard</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript: Interactivity, Language Toggle, Filter, and Modals -->
+  <script>
+    // State management
+    let currentLang = 'en';
+
+    const projectData = {
+      suiing: {
+        company: '水ing 株式会社 (Suiing Co., Ltd.)',
+        period: '2025.03 – Present',
+        titleEn: 'Wastewater Treatment AI Anomaly Detection & Monitoring',
+        titleJa: '水処理施設 AI異常検知およびリアルタイム監視システム',
+        descEn: 'Architected and deployed deep learning models to predict anomalies in municipal water treatment facilities. The system processes multi-channel IoT sensor telemetry (flow rate, water pressure, chemical turbidity) using LSTM networks, while VGG16 models inspect outdoor camera feeds for mechanical clogs under severe glare and night conditions. Standardized MLOps pipelines using AWS SageMaker and IoT Greengrass.',
+        descJa: '水処理施設（下水・浄水場）の安定稼働と保全の効率化を目的に、センサデータ解析とカメラ画像認識による異常検知システムを構築。LSTMによる水圧・流量等の時系列予兆予測と、VGG16を用いた監視カメラ画像認識を実装。屋外特有の光量変化に対応するパラメータ設計を主導し、AWS SageMaker/GreengrassによるMLOps基盤を標準化。',
+        stack: ['Python', 'PyTorch', 'LSTM', 'VGG16', 'AWS SageMaker', 'AWS IoT Core', 'Greengrass', 'Linux']
+      },
+      icom: {
+        company: 'icom技研 株式会社 (iCom Giken Co., Ltd.)',
+        period: '2024.08 – 2025.02',
+        titleEn: 'Universal Robots Palletizing Automation & URCaps Custom UI',
+        titleJa: '協働ロボット（UR）パレタイジング自動化＆URCapsプラグイン開発',
+        descEn: 'Engineered a factory automation palletizing system utilizing Universal Robots (UR10/UR20) collaborative arms. Developed custom Java Swing URCaps plugins for the Polyscope teach pendant, enabling non-technical plant operators to configure mixed-box stacking patterns, adjust TCP coordinates, and synchronize conveyor safety sensors (GC1000).',
+        descJa: '製造・物流現場向けの協働ロボット（UR10/UR20）パレタイジングシステム開発。Polyscope上で作業者が直感的に複数サイズの段ボール積載パターンを選択・設定できるURCapsプラグインをJava Swingで開発。安全センサー連携やURScript動作制御を完遂。',
+        stack: ['Java Swing', 'URCaps', 'Universal Robots', 'URScript', 'Polyscope', 'Linux', 'Safety Sensors']
+      },
+      cs: {
+        company: '株式会社シーエスコミュニケーション (CS Communication)',
+        period: '2022.04 – 2024.06',
+        titleEn: 'Barcode-Less Edge AI Cash Register (NVIDIA Jetson & YOLO)',
+        titleJa: 'バーコード不要 物体認識AIレジシステム（Jetson & YOLO）',
+        descEn: 'Developed a prototype retail checkout system that eliminates manual barcode scanning. Objects on the payment counter are recognized simultaneously using YOLO object detection models optimized with TensorRT on NVIDIA Jetson Orin embedded hardware. Integrated with high-availability Python (Django/Flask) backend APIs.',
+        descJa: 'バーコード読み取り不要の画像認識AIレジシステム開発。YOLO物体検出モデルを構築し、NVIDIA Jetson Orinエッジデバイス上で低遅延推論を実現。店舗業務効率化とコスト削減に貢献。Django/FlaskバックエンドAPIと連携。',
+        stack: ['YOLO', 'NVIDIA Jetson Orin', 'OpenCV', 'PyTorch', 'Python Django', 'Flask', 'PostgreSQL']
+      },
+      devops: {
+        company: 'Infrastructure & Engineering Operations',
+        period: '2022 – 2026',
+        titleEn: 'Enterprise Cloud MLOps & CI/CD Automation Infrastructure',
+        titleJa: 'エンタープライズ MLOps & CI/CD自動化基盤',
+        descEn: 'Established automated build, test, and containerized deployment pipelines using Docker, Kubernetes, and Jenkins. Configured AWS cloud infrastructure (EC2, S3, IAM) and tuned relational database queries for PostgreSQL and Oracle DBs to support multi-tenant internal services.',
+        descJa: 'Docker/Kubernetesによるマイクロサービスコンテナ化とJenkins CI/CD自動化パイプライン構築。PostgreSQL/Oracleのデータベース設計とクエリチューニングを実施し、システムの高可用性と迅速なデプロイサイクルを実現。',
+        stack: ['Docker', 'Kubernetes', 'Jenkins', 'AWS EC2/S3', 'PostgreSQL', 'Oracle DB', 'Linux (Ubuntu)']
+      }
+    };
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Language Toggle
+    const langBtn = document.getElementById('lang-btn');
+    const langText = document.getElementById('lang-text');
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'ja' : 'en';
+      langText.textContent = currentLang === 'en' ? '日本語' : 'English';
+      
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ja');
+        if (text) el.textContent = text;
+      });
+
+      showToast(currentLang === 'en' ? 'Switched to English' : '日本語表示に切り替えました');
+    });
+
+    // Skills Filter Tabs
+    const skillTabs = document.querySelectorAll('.skill-tab');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    skillTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        skillTabs.forEach(t => {
+          t.classList.remove('bg-cyan-500', 'text-white');
+          t.classList.add('bg-slate-900', 'text-slate-400');
+        });
+        tab.classList.add('bg-cyan-500', 'text-white');
+        tab.classList.remove('bg-slate-900', 'text-slate-400');
+
+        const category = tab.getAttribute('data-category');
+        skillItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Project Modals
+    const projectModal = document.getElementById('project-modal');
+    const projectModalContent = document.getElementById('project-modal-content');
+    const closeProjectModal = document.getElementById('close-project-modal');
+
+    document.querySelectorAll('.project-modal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-project');
+        const proj = projectData[key];
+        if (!proj) return;
+
+        const title = currentLang === 'en' ? proj.titleEn : proj.titleJa;
+        const desc = currentLang === 'en' ? proj.descEn : proj.descJa;
+
+        projectModalContent.innerHTML = `
+          <div class="text-xs font-mono text-cyan-400 font-semibold mb-1">${proj.company} · ${proj.period}</div>
+          <h3 class="text-2xl font-bold text-white mb-4">${title}</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">${desc}</p>
+          <div class="mb-6">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 font-mono">Tech Stack & Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              ${proj.stack.map(s => `<span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-cyan-300 text-xs font-mono">${s}</span>`).join('')}
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400">
+            <i class="fa-solid fa-shield-halved text-emerald-400 mr-2"></i>
+            <span>Production Verified: Currently or previously deployed in Japanese commercial operations.</span>
+          </div>
+        `;
+        projectModal.classList.remove('hidden');
+        projectModal.classList.add('flex');
+      });
+    });
+
+    closeProjectModal.addEventListener('click', () => {
+      projectModal.classList.add('hidden');
+      projectModal.classList.remove('flex');
+    });
+
+    projectModal.addEventListener('click', (e) => {
+      if (e.target === projectModal) {
+        projectModal.classList.add('hidden');
+        projectModal.classList.remove('flex');
+      }
+    });
+
+    // Documents Modal
+    const docsModal = document.getElementById('docs-modal');
+    const openDocsBtn = document.getElementById('open-docs-btn');
+    const closeDocsModal = document.getElementById('close-docs-modal');
+
+    openDocsBtn.addEventListener('click', () => {
+      docsModal.classList.remove('hidden');
+      docsModal.classList.add('flex');
+    });
+
+    closeDocsModal.addEventListener('click', () => {
+      docsModal.classList.add('hidden');
+      docsModal.classList.remove('flex');
+    });
+
+    docsModal.addEventListener('click', (e) => {
+      if (e.target === docsModal) {
+        docsModal.classList.add('hidden');
+        docsModal.classList.remove('flex');
+      }
+    });
+
+    // Copy Email Functionality
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'raselmdcs@gmail.com';
+      try {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('Email copied: raselmdcs@gmail.com');
+        }).catch(() => {
+          fallbackCopy(email);
+        });
+      } catch (err) {
+        fallbackCopy(email);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      showToast('Email copied: raselmdcs@gmail.com');
+    }
+
+    // Toast notification helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+  </script>
 </body>
-
 </html>
